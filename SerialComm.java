@@ -1,4 +1,3 @@
-package communication;
 import jssc.*;
 
 public class SerialComm {
