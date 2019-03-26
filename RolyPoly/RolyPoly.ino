@@ -120,7 +120,7 @@ void loop(){
   //implement predator 
   if (t > predatorTime){
     //check if a,w,s,or d was received 
-    char c = Serial.read(); 
+    char c = (char)Serial.read(); 
     Serial.print(c); 
     if (c == 'a'){
       //left
@@ -154,11 +154,7 @@ void loop(){
  }
  else {
     //call function to display winner 
-    displayWinner(); 
-//    Serial.print("this is millis:");
-//    Serial.println(millis()); 
-//    Serial.print("this is tempMillis:"); 
-//    Serial.println(tempMillis);   
+    displayWinner();   
   }
 }
 
@@ -176,10 +172,6 @@ void resetRound(){
 void displayWinner(){
   clearBoard(); 
   int difference; 
-//  Serial.print("This is predWinCount: ");
-//  Serial.print(predatorWinCount);
-//  Serial.print("This is preyWinCount: ");
-//  Serial.print(preyWinCount); 
   if (preyWinCheck){
     board[3][2] = 1; 
     difference = preyWinCount- predatorWinCount; 
